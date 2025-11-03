@@ -7,7 +7,7 @@ import os
 from datetime import datetime
 from config import Config
 from api.bot_api import BotAPI
-from database import Database
+from utils.database import Database
 
 # Setup logging
 logging.basicConfig(
@@ -49,6 +49,7 @@ class MegaBot(commands.Bot):
             'cogs.gaming',
             'cogs.tournament',
             'cogs.economy',
+            'cogs.admin',
             'cogs.utility',
             'cogs.study',
             'cogs.moderation',
@@ -113,7 +114,7 @@ class MegaBot(commands.Bot):
             if channel.permissions_for(guild.me).send_messages:
                 embed = discord.Embed(
                     title="👋 Thanks for adding MegaBot!",
-                    description="I'm an all-in-one bot with gaming, sports, economy, study tools, and more!",
+                    description="I'm an all-in-one bot with gaming, economy, study tools, and more!",
                     color=Config.COLOR_PRIMARY
                 )
                 embed.add_field(
@@ -147,11 +148,11 @@ class MegaBot(commands.Bot):
 def main():
     """Main function to run the bot"""
     
-    # Check if .env file exists
-    if not os.path.exists('.env'):
-        logger.error("❌ .env file not found!")
-        logger.info("📝 Please create a .env file based on .env.example")
-        logger.info("💡 Add your Discord bot token to the .env file")
+    # Check if Discord token is available (either from .env or environment variables)
+    if not Config.DISCORD_TOKEN:
+        logger.error("❌ Discord token not found!")
+        logger.info("📝 Please set DISCORD_TOKEN environment variable")
+        logger.info("💡 For local development, create a .env file based on .env.example")
         return
     
     # Create data directory if it doesn't exist

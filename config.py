@@ -13,11 +13,8 @@ class Config:
     COMMAND_PREFIX = os.getenv('COMMAND_PREFIX', '/')
     
     # API Keys
-    STEAM_API_KEY = os.getenv('STEAM_API_KEY', '')  # Pending approval
-    # OPENWEATHER_API_KEY removed - weather feature not needed
-    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+    STEAM_API_KEY = os.getenv('STEAM_API_KEY', '')
     FORMULA1_API_KEY = os.getenv('FORMULA1_API_KEY', '')
-    SPORTS_API_KEY = os.getenv('SPORTS_API_KEY', '')
     
     # Bot Settings
     DEBUG_MODE = os.getenv('DEBUG_MODE', 'False') == 'True'
@@ -56,7 +53,6 @@ class Config:
     EMOJI_TROPHY = '🏆'
     EMOJI_GAME = '🎮'
     EMOJI_STUDY = '📚'
-    EMOJI_SPORTS = '🏎️'
     
     @classmethod
     def validate(cls):

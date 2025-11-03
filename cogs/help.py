@@ -274,7 +274,7 @@ class Help(commands.Cog):
         
         embed = discord.Embed(
             title="ℹ️ About MegaBot",
-            description="A comprehensive Discord bot with economy, gaming, sports, utility tools, and more!",
+            description="A comprehensive Discord bot with economy, gaming, utility tools, and more!",
             color=discord.Color.blue()
         )
         
@@ -290,7 +290,6 @@ class Help(commands.Cog):
             name="🔧 Features",
             value="• 💰 Economy System\n"
                   "• 🎮 Gaming Integration\n"
-                  "• ⚽ Sports Betting\n"
                   "• 📚 Study Tools\n"
                   "• 🛡️ Moderation Tools",
             inline=True

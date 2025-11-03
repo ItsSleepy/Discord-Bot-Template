@@ -3,13 +3,11 @@
 
 __all__ = [
     'gaming',
-    'sports', 
     'tournament',
     'economy',
     'utility',
     'study',
     'moderation',
     'fun',
-    'ai',
     'stats'
 ]
